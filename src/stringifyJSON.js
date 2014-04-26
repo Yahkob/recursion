@@ -9,9 +9,7 @@ var stringifyJSON = function(obj){
       stringifyArray += stringifyJSON(obj[i]) + ",";
     }
     stringifyArray += stringifyJSON(obj[obj.length - 1])  + "]";
-
     return stringifyArray;
-
   }
   else if(obj instanceof Array !== true && typeof obj === "object"){
     if(!obj){
@@ -29,9 +27,7 @@ var stringifyJSON = function(obj){
       }
       stringifyObject += stringifyJSON(key) + ":" + stringifyJSON(obj[key]);
     }
-
     return stringifyObject + "}";
-
   }
   else if(typeof obj === "undefined"){
     return "" ;

@@ -5,5 +5,19 @@
 
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className){
-  // your code here
+  var results = [];
+  var retrieveElements = function(node){
+    var children = node.childNodes;
+    for(var i = 0; i < children.length; i++){
+      if(children[i].nodeType === 1){
+        if(children[i].classList.contains(className)){
+        results.push(children[i]);
+        }
+      retrieveElements(children[i]);
+      }
+    }
+
+  };
+  retrieveElements(document);
+  return results
 };
