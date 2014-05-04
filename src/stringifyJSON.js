@@ -18,7 +18,7 @@ var stringifyJSON = function(obj){
     var stringifyObject = "{";
     for(var key in obj){
       if(typeof obj[key] === "function"){
-        return '{}'
+        return '{}';
       }
       var count = 0;
       count ++;
@@ -39,7 +39,7 @@ var stringifyJSON = function(obj){
     return '"' + obj + '"';
   }
   else if(typeof obj === "number"){
-    return '' + obj ;
+    return '' + obj;
   }
 
 };
