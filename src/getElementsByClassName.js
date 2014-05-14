@@ -6,6 +6,10 @@
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className){
   var results = [];
+  var DOMList = document.body;
+  if(DOMList.className === className){
+    results.push(DOMList);
+  }
   var retrieveElements = function(node){
     var children = node.childNodes;
     for(var i = 0; i < children.length; i++){
@@ -18,6 +22,6 @@ var getElementsByClassName = function(className){
     }
 
   };
-  retrieveElements(document);
-  return results
+  retrieveElements(DOMList);
+  return results;
 };
